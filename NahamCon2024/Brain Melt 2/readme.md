@@ -61,8 +61,8 @@ def deobfuscate():
 
 def ngrok_tunnel():
     ngrok.set_auth_token(deobfuscate())
-    http_tunnel = ngrok.connect(5000)
-    print(f" * Tunnel URL: {http_tunnel.public_url}")
+    #http_tunnel = ngrok.connect(5000)
+    print(f" * Tunnel URL: {deobfuscate()}")
 
 def Desktop(pil_img):
     img_io = io.BytesIO()
@@ -128,7 +128,7 @@ def serve_img():
 if __name__ == '__main__':
     glob_key = '24a0b299984ee8da7aae14b7163e2e63'
     ngrok_tunnel()
-    app.run(host='0.0.0.0', debug=False)
+    #app.run(host='0.0.0.0', debug=False)
 
 ```
 <br>
