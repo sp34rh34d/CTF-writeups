@@ -3,7 +3,7 @@
 #### Difficulty: easy
 #### Description: You know what to do. 
 
-## procedure
+## Procedure
 run ```file``` command on theflag file
 output ```theflag: ASCII text, with very long lines (65536), with no line terminators```
 <br>
