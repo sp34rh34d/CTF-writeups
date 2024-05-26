@@ -133,8 +133,9 @@ if __name__ == '__main__':
 ```
 <br>
 
-then we can emulate the code, and it will return us the flag
+i have edited the code just to call deobfuscate function and decrypt our flag.
 
 <img width="874" alt="Screenshot 2024-05-26 at 00 17 23" src="https://github.com/sp34rh34d/CTF-writeups/assets/94752464/377ba6f8-cd8d-4a9a-8dbd-0cf37f348ac1">
+<br>
 
 flag ```flag{08e9cc5b0wnmtkkajwmijynjx3a415bd9a8024930}```
