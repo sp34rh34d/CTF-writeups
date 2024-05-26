@@ -4,7 +4,7 @@
 #### Description: You know what to do. 
 
 ## Procedure
-run ```file``` command on theflag file
+Run ```file``` command on theflag file
 output ```theflag: ASCII text, with very long lines (65536), with no line terminators```
 <br>
 <br>
