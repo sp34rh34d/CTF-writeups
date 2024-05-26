@@ -31,7 +31,7 @@ $u7fInY =  [ChAr[]]")''nIOj-]2,11,3[eman.)'*Rdm*' elBAirav-TEg(( & |)93]rAhC[]gN
 ```
 <br>
 
-This is a encoded powershell command, thanks to my friend **Bravosec**, i use PowerDecode tool to deofuscate the malicious code, you can download PowerDecode from ```https://github.com/Malandrone/PowerDecode```
+This is a encoded powershell command, thanks to my friend **Bravosec**, i use PowerDecode tool to deobfuscate the malicious code, you can download PowerDecode from ```https://github.com/Malandrone/PowerDecode```
 <br>
 
 Start the PowerDecode.bat file, and select the txt file with the malicious code<br>
