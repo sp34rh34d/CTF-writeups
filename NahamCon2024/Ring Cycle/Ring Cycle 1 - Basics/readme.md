@@ -4,6 +4,9 @@
 #### Description: Let us start with a simple one and see if you can break into this vault. NOTE, the plaintext that you provide the binary should be readable English. Reverse engineer the binary to understand what it really does... patching the binary will ultimately give you the wrong answer. 
 
 ## Procedure
+Running the command ```file basisc``` we got the output ```basics: ELF 64-bit LSB pie executable, x86-64, version 1 (SYSV), dynamically linked, interpreter /lib64/ld-linux-x86-64.so.2, BuildID[sha1]=1b62152cc3b6a13c30959ac8673ded9a80bd1140, for GNU/Linux 3.2.0, not stripped```<br>
+
+we can use ```https://dogbolt.org``` tool with ```Hex-Rays``` option to get the binary code.
 
 ## Basic code content
 1) The check function takes an input string (a1) and performs several transformations on it to compare it with a hardcoded string s2
