@@ -132,7 +132,6 @@ int check(char* input) {
 
 int main() {
     char staticInput[] = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRST";
-    size_t inputLength = strlen(staticInput);
 
     if (check(staticInput)) {
       printf("Correct!");
