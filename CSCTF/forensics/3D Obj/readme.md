@@ -1,4 +1,4 @@
-## Name: Geometry Dash 2.1
+## Name: 3D Obj
 #### Category: forensic
 #### Difficulty: N/A
-#### Description: I would give you the flag but I can't let go (haha get it). use GDBrowser for the last step btw.
+#### Description: I am sending you my secret cube. I hope you could read my secret from the little colourful squares?
