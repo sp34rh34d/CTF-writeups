@@ -8,7 +8,7 @@ The CCLocalLevels.dat file is used by the game Geometry Dash to store user-creat
 
 ![Screenshot 2024-09-03 at 8 24 29 PM](https://github.com/user-attachments/assets/5d3f726b-8667-4274-b5c7-a2f9c8edfc3a)
 
-After search about the file, i found a site called [GDColon](https://gdcolon.com/gdsave/) that allow us to read our CCLocalLevels.dat file. We can see the string ```flag is in the level somewhere```.
+After searching about the file, i found a site called [GDColon](https://gdcolon.com/gdsave/) that allows us to read our CCLocalLevels.dat file. We can see the string ```flag is in the level somewhere```.
 
 ![Screenshot 2024-09-03 at 8 29 18 PM](https://github.com/user-attachments/assets/184c550c-6cab-4d86-829b-59c74c058270)
 
