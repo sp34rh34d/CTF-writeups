@@ -6,11 +6,38 @@
 ## Procedure
 The ```.mtl``` file is a material library file used in 3D modeling. It is associated with the ```.obj``` file format, which defines the geometry of a 3D model. The ```.mtl``` file describes the surface appearance of the 3D object, including colors, textures, reflectivity, and other material properties.
 
-![Screenshot 2024-09-03 at 8 47 26 PM](https://github.com/user-attachments/assets/c83187f8-677e-4998-9c0f-ecf8db678000)
+```
+├── chall
+│   ├── chall.obj
+│   ├── cube.mtl
+│   └── tex.png
+```
 
 
 ### chall.obj content
-![Screenshot 2024-09-03 at 8 51 22 PM](https://github.com/user-attachments/assets/7150b7b3-beb1-4b50-af63-c43bfcd32f30)
+```
+cat chall.obj | head -n 20
+mtllib cube.mtl
+g cube
+v 25.818113 -1.852144 -9.649591
+v 26.695771 -2.219219 -9.957767
+v 27.573428 -2.586295 -10.265943
+v 28.451086 -2.953371 -10.574119
+v 29.328744 -3.320447 -10.882295
+v 30.206401 -3.687522 -11.190471
+v 31.084059 -4.054598 -11.498647
+v 31.961717 -4.421674 -11.806823
+v 32.839374 -4.788750 -12.114999
+v 33.717032 -5.155825 -12.423176
+v 34.594689 -5.522901 -12.731352
+v 35.472347 -5.889977 -13.039528
+v 36.350005 -6.257052 -13.347704
+v 37.227662 -6.624128 -13.655880
+v 38.105320 -6.991204 -13.964056
+v 38.982978 -7.358280 -14.272232
+v 39.860635 -7.725355 -14.580408
+v 40.738293 -8.092431 -14.888584
+```
 
 ### cube.mtl content
 ```
