@@ -48,7 +48,7 @@ STUB = ("oldcss=")
 
 ```
 
-It then reads the value of the cookie from the request. The name and length of the cookie are actually hard-coded in the variables “COOKIE_SESSIONID_STRING” and “COOKIE_SESSIONID_LENGTH” which default to “sessionid” and “15” respectively . If it’s set the instructions are read from the instruction dictionary. This dictionary is a global variable that maps every client connected to the C2 and the commands sent to it. The instructions sent by the operators are encrypted using AES and Base64 encoded. These parameters confirm that it is HTTPC2 using the trevorc2 tool.
+It reads the value of the cookie from the request. The name and length of the cookie are actually hard-coded in the variables “COOKIE_SESSIONID_STRING” and “COOKIE_SESSIONID_LENGTH” which default to “sessionid” and “15” respectively . If it’s set the instructions are read from the instruction dictionary. This dictionary is a global variable that maps every client connected to the C2 and the commands sent to it. The instructions sent by the operators are encrypted using AES and Base64 encoded. These parameters confirm that it is HTTPC2 using the trevorc2 tool.
 
 So, I wrote the following python script to recover the plaintext data
 
