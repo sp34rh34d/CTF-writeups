@@ -63,5 +63,5 @@ After a few minutes and 20 failed attempts to submit the flag 💀🫠😂... ``
 ![ScreenRecording2024-09-03at8 53 59PM-ezgif com-video-to-gif-converter](https://github.com/user-attachments/assets/b89255ad-2b75-4a9d-a684-843ab34da8eb)
 
 
-flag ```CSCTF{H1d1ng_1n_T3x7ur3}```
+flag ```CSCTF{H1d1ng_in_T3x7ur3}```
 
