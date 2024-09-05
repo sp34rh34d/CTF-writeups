@@ -10,7 +10,7 @@ In this crypto chall, we can see the following:
 3) Converting the flag to an integer using bytes_to_long function.
 4) The public exponent ```e``` is defined as 0x10001 (65537), which is a common value in RSA.
 5) The prime number ```p``` is generated using getPrime(1024).
-6) The second prime number ```q``` is was created using ```nextprime(p + getrandbits(512))```, where ```getrandbits(512)``` adds a random variation to ensure that ```q``` is different from ```p```.
+6) The second prime number ```q``` was created using ```nextprime(p + getrandbits(512))```, where ```getrandbits(512)``` adds a random variation to ensure that ```q``` is different from ```p```.
 
 ```
 import os
