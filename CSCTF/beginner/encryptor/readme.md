@@ -53,7 +53,7 @@ public void getflag_onClick(View view) {
     }
 ```
 
-We need to read the ```enc.txt``` file, I have amulated the apk file and click on Get Flag buttom to see the encrypted flag
+We need to read the ```enc.txt``` file, I have amulated the apk file and clicked on ```Get Flag``` buttom to see the encrypted flag
 ![Screenshot 2024-09-05 at 11 30 59 AM](https://github.com/user-attachments/assets/648646d5-24b9-4e0c-b32f-0f4a715b7db3)
 
 
