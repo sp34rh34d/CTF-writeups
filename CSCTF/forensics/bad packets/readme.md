@@ -19,14 +19,14 @@ After check for some interesting file in the pcapng, i didnt find anything, at t
 Then I was checking the code looking for some similarity in headers and url, i saw the following parameters
 <br>
 <br>
-parameter in pcapng file
+parameters in pcapng file
 
 ```
 Cookie: sessionid=KUNBTYOfDGTICbY
 oldcss=IGUBqRmQ1fL9AbrJZqvHgWU3jkIt2MWxL/4TKyktAN5Yb6oDvDAv7zjqENtNi0OpE9Aq9r4PHQQUDlcpwwJiPkk/JYh9mbWLoDAdnXArr70=
 GET /images?guid=QlNrbWU5eFB4cE5ZRmZPQ0xmbUFWVCsrdHoyRFZoZ2lNRGpOd0pMdVZxUFBKelhEc281YmlHbTRqWXQ3NmJKWW5Bclh0ZDkrWjFBejZaQnpraXZlMWYvT1VUaVhOcUVUc2N1ako3SGd0OVQ4RmI2YzFQQlZRU3Z1OGU4ZHhKaW1SeHVON2xuNXVLNG43RDlrMTN5YjgvMmNuWEZWNndoWm5VZVl2c0g0aHpkNFQxQStON1U3R0xJU2hzSjdiUkxlRFd4MU5IY0FWVzNpU3lCb2pvRkRWZE9wUFFnWW9NaW4xMHJHbXhjQ2w1cmlLS2I5Sm53a3N0NHJDKzBqRW4ya1BhRkVWbWU5cHdWYVlENFJ5aTVLOGJTSGV1UU5zRU9EZXhlVzZQN3RpQ2J3R1BqSG83VDNFakIzTi8zQ3lmQmt6a25BVzZKZi9oNGw4UEZ4K3k0YnpLQ1ZvNXpWMmk1ZHpIQ3JKWStsbmpzeUFWV2NPZ1kvU2hxL1BSd2RTd1VQcUk0VkxYVC8rMWpadHFkNFhCTXR5VHYwNmYvaE1jTWZZR0U1bDZpV3Z0Y2RXcmRIUHg5b09PYWF3dU9VMXdIN09JSm9yVlpiOHkwZmNjQ1Vpa1gySWdGWkJQK1FvR0xkWjBOSVY4TUd3clhoOGJlSDVYeDl6UE5rNDliRERyZ1l4VTJucHNxQnM5dnc5ZFNxN1B0bnljbXhxQVlmQ2dNOWZrc280YXlWanRsdndlUE8vYlp4MGd1ODg0NUFkZWlXTjkvbldXZCtFNVFKbTFRb09lMFZEaE0xUnhBRFhmdlR4TlVqL09uTGdBZG9pRGZLbFNHdHp0R2lmckYwSXBHWUhjbEJpR1FWelFtZWpwQnlPdHhyaFlpVnRjVmUxbTJBMk9hU3RRT25RRXY1K1FZNDhUbkV0UTYwTVlTMU95TWV1am5wOUo2bjZ6VlZaUmg0ckdXM1B4UVZDTGNnZU1rVWEvb2FZY0VMZkw2b2Y3VDVkeXNwbXhBQ0d3RTFHclhqSS9YQmpYV3B3c1U3eTd3c3EyeS9ZTGNURU9vai9RaXdFOEpJeDh2QVQxWHh3RkExTnd0aG9WK1Yvd0I3MmdOcUQ3SHFmcitIaEhVNkpVUDlqeDNjOGc9PQ== HTTP/1.1
 ```
-parameter in trevorc2
+parameters in trevorc2
 ```
 COOKIE_SESSIONID_STRING = ("sessionid")
 STUB = ("oldcss=")
@@ -48,9 +48,12 @@ STUB = ("oldcss=")
 
 ```
 
-It reads the value of the cookie from the request. The name and length of the cookie are actually hard-coded in the variables “COOKIE_SESSIONID_STRING” and “COOKIE_SESSIONID_LENGTH” which default to “sessionid” and “15” respectively . If it’s set the instructions are read from the instruction dictionary. This dictionary is a global variable that maps every client connected to the C2 and the commands sent to it. The instructions sent by the operators are encrypted using AES and Base64 encoded. These parameters confirm that it is HTTPC2 using the trevorc2 tool.
-
-So, I wrote the following python script to recover the plaintext data
+1) It reads the value of the cookie from the request.
+2) The name and length of the cookie are actually hard-coded in the variables “COOKIE_SESSIONID_STRING” and “COOKIE_SESSIONID_LENGTH” which default to “sessionid” and “15” respectively .
+3) If it’s set the instructions are read from the instruction dictionary. This dictionary is a global variable that maps every client connected to the C2 and the commands sent to it.
+4) The instructions sent by the operators are encrypted using AES and Base64 encoded.
+  
+These parameters confirm that it is HTTPC2 using the trevorc2 tool. So, I wrote the following python script to recover the plaintext data
 
 ```
 import base64
