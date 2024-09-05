@@ -10,9 +10,9 @@ The quarantined files are stored in a hidden and protected folder on your system
 
 Within this directory, the file structure is organized into several subdirectories, each serving a specific purpose.
 The Quarantine Folder Structure typically has the followign folders:
-ResourceData: Contains the actual quarantined files. These files are encrypted, making them inaccessible and unusable in their current form.
-Resources: Often mirrors the structure of ResourceData and may contain metadata or information about the quarantined files.
-Entries: Contains metadata about the quarantined items, including information about the original location of the file, the time it was quarantined, and the threat detected.
+*ResourceData: Contains the actual quarantined files. These files are encrypted, making them inaccessible and unusable in their current form.
+*Resources: Often mirrors the structure of ResourceData and may contain metadata or information about the quarantined files.
+*Entries: Contains metadata about the quarantined items, including information about the original location of the file, the time it was quarantined, and the threat detected.
 
 In this chall, we can see the same file structure, so now we know this is a malware file and we need to extract the file from quarantine.
 ```
