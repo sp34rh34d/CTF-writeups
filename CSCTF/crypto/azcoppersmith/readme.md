@@ -6,7 +6,7 @@
 ## Procedure
 In this crypto chall, we can see the following:
 1) The code have used a os.urandom(70) to generate 70 bytes of random data at the start and end.
-2) We concatenate these bytes with the string b"CSCTF{fake_flag}", forming the complete flag.
+2) It concatenates these bytes with the string b"CSCTF{fake_flag}", forming the complete flag.
 3) Converting the flag to an integer using bytes_to_long function.
 4) The public exponent ```e``` is defined as 0x10001 (65537), which is a common value in RSA.
 5) The prime number ```p``` is generated using getPrime(1024).
