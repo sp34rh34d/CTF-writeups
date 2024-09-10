@@ -54,7 +54,7 @@ After analyzing the source code we have recovered from http request, we know tha
 tshark -r chall.pcapng -o tls.keylog_file:keys.log -T fields -e ip.id > ip_ids.txt
 ```
 
-we have saved the ```IP IDs``` in the file ```ip_ids.txt``` file, each ID is in hex format, so we need to convert it to base16, and then we have to do a division operation to retrieve our flag, but we dont know the key used to encrypt the flag.
+we have saved the ```IP IDs``` in the file ```ip_ids.txt``` file, each ID is in hex format, so we need to convert it to base16, and then we have to divides it with our key to retrieve our flag, but we dont know the key used to encrypt the flag.
 <br>
 Reading the code again, we have ```key = ??```, this tells me, maybe the key is using only two digits, so we can try to do a bruteforce attack. I wrote the following python script.
 
