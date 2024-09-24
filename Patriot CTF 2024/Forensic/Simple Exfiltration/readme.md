@@ -25,7 +25,7 @@ And we can see that every http request has the following data.
 </html>
 ```
 
-We can say this is a rabbot hole, and then we can see some echo ping requests, we can filter the icmp packets using ```icmp.type==0``` for icmp echo reply and ```icmp.type==8``` for icmp echo request, using both filters, you can see that every ttl value change for icmp echo request, use the following command to extract ttl data ``` tshark -r exfiltration_activity_pctf_challenge.pcapng -Y "icmp.type==8" -T fields -e "ip.ttl"```
+this look like a rabbot hole, you can see some echo ping requests, we can filter the icmp packets using ```icmp.type==0``` for icmp echo reply and ```icmp.type==8``` for icmp echo request, using both filters, you can see that every ttl value change for icmp echo request, use the following command to extract ttl data ``` tshark -r exfiltration_activity_pctf_challenge.pcapng -Y "icmp.type==8" -T fields -e "ip.ttl"```
 output
 ```
 112,99,116,102,123,116,105,109,101,95,116,111,95,108,105,118,101,95,101,120,102,105,108,116,114,97,116,105,111,110,125
