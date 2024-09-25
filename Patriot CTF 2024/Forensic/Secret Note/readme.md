@@ -94,10 +94,11 @@ HID reports for mice typically contain relative movement data (for X/Y coordinat
 
 More information [HID Wiki](https://wiki.osdev.org/USB_Human_Interface_Devices)
 
-After this investigation we start extracting HID data from pcapng file with command ```tshark -r capture.pcapng -Y "usb.src==3.1.1" -T fields -e usbhid.data > hid.txt```
+After this investigation we start extracting HID data from pcapng file with command ```tshark -r capture.pcapng -Y "usbhid.data" -T fields -e usbhid.data  > hid.txt```
+
 output
 ```
-at hid.txt | head -n 30
+cat hid.txt | head -n 30
 0000263957510000
 0000263957510000
 000026397b510000
