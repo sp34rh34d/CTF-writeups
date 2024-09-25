@@ -63,7 +63,7 @@ DECIMAL       HEXADECIMAL     DESCRIPTION
 --------------------------------------------------------------------------------
 354           0x162           TIFF image data, big-endian, offset of first image directory: 8
 ```
-Both output tells me that there is an hidden image into ```wim``` file, i was traying to extract data using ```binwalk -e budget.wim```, but not work.
+Both output tells me that there is an hidden image into ```wim``` file, i was trying to extract data using ```binwalk -e budget.wim```, but not work.
 
 I did a manual carve using ```dd``` command, ```dd if=budget.wim of=flag.tiff bs=1 skip=354```, but the image was currupted.
 
