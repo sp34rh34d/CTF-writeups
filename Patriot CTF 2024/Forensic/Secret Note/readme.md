@@ -128,9 +128,9 @@ To reconstruct the X, Y coordinates from the HID data, we'll first parse the hex
 
 
 take the value ```0000263957510000```
-1) Byte 1: 00 – Button state (ignore for now).
-2) Byte 2: 26 – X movement (hex 0x26 = 38 in decimal, so movement is +38 in X direction).
-3) Byte 3: 39 – Y movement (hex 0x39 = 57 in decimal, so movement is +57 in Y direction).
+1) Byte 1: 00 or 0000 – Button state (ignore for now).
+2) Byte 2: 26 or 2639 – X movement 
+3) Byte 3: 57 or 5751 – Y movement 
 4) Remaining Bytes: Reserved or unused for this purpose.
 
 
