@@ -128,10 +128,43 @@ To reconstruct the X, Y coordinates from the HID data, we'll first parse the hex
 
 
 take the value ```0000263957510000```
-1) Byte 1: 00 or 0000 – Button state (ignore for now).
-2) Byte 2: 26 or 2639 – X movement 
-3) Byte 3: 57 or 5751 – Y movement 
+1) Byte 1: 0000 – Button state (ignore for now).
+2) Byte 2: 2639 – X movement 
+3) Byte 3: 5751 – Y movement 
 4) Remaining Bytes: Reserved or unused for this purpose.
+
+The value ```0100000000000000``` means write, and value ```0000000000000000``` dont write.
+
+I was reading a lot about HID, and checking other CTF, i wrote the following script after understand how it works
+```
+from PIL import Image, ImageDraw
+
+img = Image.new("RGB", (5000, 5000), "white")
+draw = ImageDraw.Draw(img)
+
+hid = open('hid.txt','r').read().split("\n")
+
+write=False
+
+for data in hid:
+    if data:
+        if data == "0100000000000000":
+            write=True
+        elif data == "0000000000000000":
+            write=False
+
+        if write:
+            x = int(bytes.fromhex(data[4:8])[::-1].hex(),16)//10
+            y = int(bytes.fromhex(data[8:12])[::-1].hex(),16)//10
+            draw.line((x, y,x+5,y+5), fill="black", width=5)
+
+img.save("flag.png")
+img.show()
+```
+
+output 
+
+![2024-09-25_18-36](https://github.com/user-attachments/assets/021eb774-bb5b-4cc0-b19c-9efe9f012368)
 
 
 
