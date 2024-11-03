@@ -1,4 +1,5 @@
 ## Name: Knight's Quest
+#### Author: @HuskyHacks
 #### Category: Reverse Engineering 
 #### Difficulty: N/D
 #### Description: An adventurer is YOU! Play Knight's Quest, beat the three monsters, and claim the flag! Very straightforward with no surprises, no sir-ee, no surprises here lmao
