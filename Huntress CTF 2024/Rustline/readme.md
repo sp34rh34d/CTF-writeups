@@ -1,4 +1,5 @@
 ## Name: Rustline
+#### Author: @HuskyHacks
 #### Category: Malware
 #### Difficulty: N/D
 #### Description: Jerry: A Redline Stealer.
