@@ -1,7 +1,13 @@
-In the packet, secrets lie,
-Whispers of data pass by,
-Encrypted shadows creep,
-While the watchful eyes peep.
+## Name: Little Shop of Hashes
+#### Author: Austin Worline, Jose Oregon, and Adrian Garcia
+#### Category: Forensics
+#### Difficulty: N/D
+#### Description: In the packet, secrets lie, Whispers of data pass by, Encrypted shadows creep, While the watchful eyes peep.
+
+## Procedure
+1
+
+
 
 Are you able to unravel the attack chain? The first question is:
 What is the name of the service that the attacker ran and stopped, which dumped hashes on the first compromised host?
