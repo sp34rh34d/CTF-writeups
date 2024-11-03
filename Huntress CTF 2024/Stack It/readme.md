@@ -1,6 +1,15 @@
-Our team of security analysts recently worked through a peculiar Lumma sample.
+## Name: Stack It
+#### Author: @sudo_Rem
+#### Category: Reverse Engineering
+#### Difficulty: N/D
+#### Description: Our team of security analysts recently worked through a peculiar Lumma sample.
 The dentists helping us advised we floss at least twice a day to help out.
 He also gave us this weird file. Maybe you can help us out.
+
+## Procedure
+1
+
+
 
 
 b *0x08049000
