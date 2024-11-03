@@ -1,9 +1,18 @@
-Plantopia is our brand new, cutting edge plant care management website! Built for hobbiests and professionals alike, it's your one stop shop for all plant care management.
+## Name: Plantopia
+#### Author: @HuskyHacks
+#### Category: Web
+#### Difficulty: N/D
+#### Description: Plantopia is our brand new, cutting edge plant care management website! Built for hobbiests and professionals alike, it's your one stop shop for all plant care management.
 
 Please perform a penetration test ahead of our site launch and let us know if you find anything.
 
 Username: testuser
 Password: testpassword
+
+## Procedure
+1
+
+
 
 echo "dGVzdHVzZXIuMC4xNzI5ODgyMjQ5" | base64 -d
 
