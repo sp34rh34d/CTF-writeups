@@ -5,7 +5,7 @@
 #### Description: We found this file in the autoruns of a host that seemed to have a lot of network activity... can you figure out what it was doing?
 
 ## Procedure
-I have starte
+1
 
 
 ````
