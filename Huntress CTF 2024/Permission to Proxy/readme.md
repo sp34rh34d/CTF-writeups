@@ -1,8 +1,17 @@
-Where do we go from here?
+## Name: Permission to Proxy
+#### Author: @JohnHammond
+#### Category: Misc
+#### Difficulty: N/D
+#### Description: Where do we go from here?
 
 Escalate your privileges and find the flag in root's home directory.
 
 Yes, the error message you see on startup is intentional. ;)
+
+## Procedure
+1
+
+
 
 
 
