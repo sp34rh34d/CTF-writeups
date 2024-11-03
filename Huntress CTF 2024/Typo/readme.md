@@ -9,7 +9,7 @@ In this chall, we have to connect to remote ssh server using creds
 
 ```
 Password is "userpass"
-ssh -p 31389 user@challenge.ctf.games
+ssh -p 30179 user@challenge.ctf.games
 ```
 
 After connect to remote server, show us an ascii art and then disconnect our ssh sesion, no chance to type any. 
