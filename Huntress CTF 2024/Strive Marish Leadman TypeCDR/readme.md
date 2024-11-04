@@ -5,7 +5,12 @@
 #### Description: Looks like primo hex garbage. Maybe something went wrong? Can you make sense of it?
 
 ## Procedure
-In this chall we have to connect to remote server and it sends us a encrypted text with RSA, but it sends us the value for ```e,N,p,q and d```, this is enough to decrypt our flag, every single value is in hex data, so we have to convert them to big integer. I wrote the following python code
+In this chall we have to connect to remote server and it sends us a encrypted text with RSA, but it sends us the value for ```e,N,p,q and d```, this is enough to decrypt our flag, every single value is in hex data, so we have to convert them to big integer. 
+
+<img width="1091" alt="Screenshot 2024-10-25 at 11 45 03 AM" src="https://github.com/user-attachments/assets/1694032f-0c06-41ed-9a2e-019e3a3cb4f3">
+
+
+I wrote the following python code
 
 ```
 d = int("cf7ce214f3a0728caf436cfe9074de74913d206bcfb634837a4f053eefb181da956931cc75016e84a5acc2f84a15a3a1b04239817f8471e40aca1cf2e758bd9a31766152706923463cf12fabda5fb9ef7f14798375321db837e9a3d7af4c3ae915001540bfba697865daf97124f4e587db7ee96bb23ca570b09a5936b483581", 16)
