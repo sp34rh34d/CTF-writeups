@@ -7,7 +7,7 @@
 ## Procedure
 Running the ```file``` command it shows the following output ```zulu: compress'd data 16 bits```.
 
-a compress file, so i have used 7z to extract the file context.
+a compress file, so i have used 7z to extract the file content.
 
 ![image](https://github.com/user-attachments/assets/cad8abf7-7242-4b16-ab8c-4bb0112b507c)
 
