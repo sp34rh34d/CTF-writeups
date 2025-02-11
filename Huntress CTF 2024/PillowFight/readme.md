@@ -34,10 +34,10 @@ We have already ```root``` permission, so just need to read our flag.txt file.
 ![Screenshot 2024-10-25 at 3 13 28 PM](https://github.com/user-attachments/assets/091f3c11-c8e1-4150-a12c-1aa232642993)
 
 
-flag{b6b62e6c5cdfda3b3a8b87d90fd48d01}
+flag ```flag{b6b62e6c5cdfda3b3a8b87d90fd48d01}```
 
 
-###Bonus
+### Bonus
 Another way to get the shell but with a python script
 ```
 import requests
