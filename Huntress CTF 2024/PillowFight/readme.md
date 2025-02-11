@@ -13,7 +13,7 @@ The website ask for two png file to merge, for this it uses Python Pillow 8.4.0.
 The API documentation we can see the path ```combine``` this allow only ```http POST request```, this ask for ```image1```, ```image2``` but has another interesting input ```eval_command``` this allows us to execute an RCE.
 ![Screenshot 2024-10-25 at 3 11 54 PM](https://github.com/user-attachments/assets/1e6821bb-64f1-4484-bd11-73f0a661c7df)
 
-we can get aur shell with the following bash script, we need to use ngrok to get the shell
+we can get our shell with the following bash script, we need to use ngrok to get the shell
 ```
 #!/bin/bash
 
