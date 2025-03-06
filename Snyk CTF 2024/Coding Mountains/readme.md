@@ -1,4 +1,4 @@
-## Name: 1200 Transmissions
+## Name: Coding Mountains
 #### Author: @Soups71
 #### Category: scripting
 #### Difficulty: easy
