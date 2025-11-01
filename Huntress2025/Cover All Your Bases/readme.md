@@ -1,0 +1,165 @@
+## Chall description
+```
+Category: Warmups
+Can you make sense of all the different data below? Each one has a different representation!
+```
+
+## Procedure
+### Chall #1 (Binary): description**
+```
+Uncover the appropriate plaintext and submit the flags below! Do you know what all these ones and zeros mean?
+
+01000111 01110010 01100101 01100001 01110100 00100000 01110111 01101111 01110010 01101011 00100001 
+00100000 01010100 01101000 01100001 01110100 00100000 01110111 01100001 01110011 00100000 01000010 
+01100001 01110011 01100101 00100000 00110010 00101100 00100000 01100010 01100101 01110100 01110100 
+01100101 01110010 00100000 01101011 01101110 01101111 01110111 01101110 00100000 01100001 01110011 
+00100000 01100010 01101001 01101110 01100001 01110010 01111001 00101110 00100000 01001001 01110100 
+00100000 01101111 01101110 01101100 01111001 00100000 01110101 01110011 01100101 01110011 00100000 
+01110100 01110111 01101111 00100000 01110011 01111001 01101101 01100010 01101111 01101100 01110011 
+00111010 00100000 00110000 00100000 01100001 01101110 01100100 00100000 00110001 00101100 00100000 
+01110111 01101000 01101001 01100011 01101000 00100000 01101101 01100001 01101011 01100101 01110011 
+00100000 01101001 01110100 00100000 01100101 01100001 01110011 01111001 00100000 01110100 01101111 
+00100000 01110011 01110000 01101111 01110100 00101110 00100000 01000001 01101110 01111001 01110111 
+01100001 01111001 00101100 00100000 01101000 01100101 01110010 01100101 00100111 01110011 00100000 
+01111001 01101111 01110101 01110010 00100000 01100110 01101100 01100001 01100111 00111010 00100000 
+01100110 01101100 01100001 01100111 01111011 00110110 00110111 00111000 01100001 01100011 00110100 
+00110101 00110100 00111000 00110111 01100011 00111001 00111000 00110110 00110010 01100001 00110110 
+01100011 00110010 01100011 00110000 00110000 01100001 00110001 01100001 01100110 01100110 01100101 
+01100100 00111001 01100100 01100011 01111101
+```
+<img width="1343" height="556" alt="Screenshot 2025-10-02 at 2 56 03 PM" src="https://github.com/user-attachments/assets/680e4461-f1ed-407d-b92f-620a4341ae6e" />
+
+Flag `flag{678ac45487c9862a6c2c00a1affed9dc}`
+
+### Chall #2 (Octal): description
+```
+Hmmm, a group of triplets, it looks like. Can you find out what they are trying to say?
+
+116 151 143 145 154 171 040 144 157 156 145 041 040 124 150 141 164 040 167 141 163 040 102 141 163 
+145 040 070 054 040 157 162 040 157 143 164 141 154 056 040 111 164 040 165 163 145 163 040 144 151 
+147 151 164 163 040 060 055 067 054 040 141 156 144 040 157 146 164 145 156 040 163 150 157 167 163 
+040 165 160 040 151 156 040 146 151 154 145 040 160 145 162 155 151 163 163 151 157 156 163 040 157 
+156 040 114 151 156 165 170 056 040 123 160 157 164 040 151 164 040 167 150 145 156 040 156 165 155 
+142 145 162 163 040 150 141 166 145 040 154 145 141 144 151 156 147 040 060 163 056 040 110 145 162 
+145 047 163 040 171 157 165 162 040 146 154 141 147 072 040 146 154 141 147 173 146 145 065 070 060 
+145 060 065 145 065 062 067 146 062 060 064 062 061 062 071 060 066 060 065 070 060 071 143 141 145 
+143 071 175
+```
+<img width="1342" height="576" alt="Screenshot 2025-10-02 at 2 59 17 PM" src="https://github.com/user-attachments/assets/2c876c19-c608-4cfb-986f-5c2998efb855" />
+
+Flag `flag{fe580e05e527f20421290605809caec9}`
+
+### Chall #3 (Decimal): description
+```
+These numbers look familiar... but how could they be represented as text?
+
+089 111 117 032 099 114 097 099 107 101 100 032 105 116 033 032 084 104 097 116 032 119 097 115 032 
+066 097 115 101 032 049 048 044 032 111 117 114 032 101 118 101 114 121 100 097 121 032 100 101 099 
+105 109 097 108 032 115 121 115 116 101 109 046 032 073 116 032 114 117 110 115 032 102 114 111 109 
+032 048 045 057 032 097 110 100 032 108 111 111 107 115 032 108 105 107 101 032 110 111 114 109 097 
+108 032 110 117 109 098 101 114 115 046 032 069 097 115 121 032 116 111 032 105 100 101 110 116 105 
+102 121 033 032 089 111 117 114 032 102 108 097 103 058 032 102 108 097 103 123 055 100 049 101 098 
+050 101 048 055 055 054 099 100 055 099 053 099 055 056 100 102 048 049 048 049 048 102 051 048 101 
+053 048 125
+```
+<img width="1341" height="565" alt="Screenshot 2025-10-02 at 3 10 27 PM" src="https://github.com/user-attachments/assets/289e0427-60ae-4610-912d-8fbf4ec5b3c6" />
+
+Flag `flag{7d1eb2e0776cd7c5c78df01010f30e50}`
+
+### Chall #4 (Hex): description
+```
+These look like pairs! But these have weird letters in them?
+
+41 77 65 73 6f 6d 65 20 6a 6f 62 21 20 54 68 61 74 20 77 61 73 20 42 61 73 65 20 31 36 2c 20 6f 72 
+20 68 65 78 61 64 65 63 69 6d 61 6c 2e 20 49 74 20 75 73 65 73 20 30 2d 39 20 61 6e 64 20 41 2d 46 
+2c 20 6f 66 74 65 6e 20 77 69 74 68 20 70 72 65 66 69 78 65 73 20 6c 69 6b 65 20 30 78 2e 20 43 6f 
+6d 6d 6f 6e 20 69 6e 20 6d 65 6d 6f 72 79 20 64 75 6d 70 73 20 61 6e 64 20 63 6f 6c 6f 72 20 63 6f 
+64 65 73 2e 20 48 65 72 65 20 69 73 20 79 6f 75 72 20 66 6c 61 67 3a 20 66 6c 61 67 7b 64 33 63 62 
+32 62 65 33 65 34 65 34 61 38 66 35 31 37 64 39 63 35 63 65 34 33 37 32 62 30 62 37 7d
+```
+<img width="1342" height="553" alt="Screenshot 2025-10-02 at 3 18 55 PM" src="https://github.com/user-attachments/assets/1803ccaf-5bd9-4e07-a9c2-a0c6f46aebb4" />
+
+Flag `flag{d3cb2be3e4e4a8f517d9c5ce4372b0b7}`
+
+### Chall #5 (Base32): description
+```
+Uppercase letters and digits in a long stream.... notice anything about the padding?
+
+I5XW6ZBAO5XXE2ZBEBKGQYLUEB3WC4ZAIJQXGZJAGMZCYIDPMZ2GK3RAOVZWKZBA
+NFXCAR3PN5TWYZJAIF2XI2DFNZ2GSY3BORXXEIDLMV4XGLRAJF2CA5LTMVZSAQJN
+LIQGC3TEEAZC2NZOEBEWMIDZN52SA43FMUQGY33UOMQG6ZRAOVYHAZLSMNQXGZJA
+NRSXI5DFOJZSAYLOMQQGI2LHNF2HGLBAORUGS3TLEBBGC43FGMZC4ICHMV2CA5DI
+MF2CAZTMMFTSCIDGNRQWO6ZZMJRDKYTCHBSWCNJQHBRGGZTCMM2TCYTEGVSTCMLF
+MZRDEOLDMN6Q====
+```
+<img width="1346" height="581" alt="Screenshot 2025-10-02 at 3 20 34 PM" src="https://github.com/user-attachments/assets/a933702b-9d97-4784-ab48-646f1eb80810" />
+
+Flag `flag{9bb5bb8ea508bcfbc51bd5e11efb29cc}`
+
+### Chall #6 (Base45): description
+```
+A mixed alphabet with symbols. What is this one supposed to be?
+
+K19X CSUEWQE24EBWE3/DK848UAIECV44HECN34HECDZC0R61Q57%E  CH44M-DSCAB44V3E6$CE4404
+EQ34CYA8T8D3D3WE5UD-M8*+APR8IN85LEREDOEDIEC6$CI$5*C9T44LQE.OEOCCJ$DH8FX3EK447$C7
+WE4LE1Q5AVCD3DLWE1Q5CECRTC-QEC$D*3EBPEU34SUE*VD%3E.OEKFE*EDIQDA448%EC44Z CV3E6$C
+B44TVDCEC4WDI$5Y69O/E944E44PVDV1DE44PVDV3DVICYJCI-C4:6846:/6A46YICJOCGM64ECYJCKA
+7YJC2R6J-CZ2
+```
+<img width="1348" height="574" alt="Screenshot 2025-10-02 at 3 22 01 PM" src="https://github.com/user-attachments/assets/da66ffb8-b6b1-4af7-b673-cf8fe998b965" />
+
+Flag `flag{b5bef376027104b8c73dafbe95be47f4}`
+
+### Chall #7 (Base64): description
+```
+Compact and common on the wire... does the ending give you a clue?
+
+V2VsbCBkb25lISBUaGF0IHdhcyBCYXNlIDY0LCBzdXBlciBjb21tb24gZm9yIGVuY29kaW5nIGRh
+dGEgaW4gZW1haWwgYW5kIHdlYiB0cmFmZmljLiBMb29rIGZvciBBLVosIGEteiwgMC05LCBwbHVz
+ICsgYW5kIC8sIGFuZCBzb21ldGltZXMgdGhlIHBhZGRpbmcgPSBzaWducyBhdCB0aGUgZW5kLiBG
+bGFnOiBmbGFne2NkMDE2NGZmNjQ3MjZmMjk3MmIyZDhmMmFjMDExOWRifQ==
+```
+<img width="1338" height="583" alt="Screenshot 2025-10-02 at 3 28 51 PM" src="https://github.com/user-attachments/assets/ecd586ae-9736-4be3-9a78-9e278afef9bc" />
+
+Flag `flag{cd0164ff64726f2972b2d8f2ac0119db}`
+
+### Chall #8 (Base85): description
+```
+This variant often shows special markers. See anything bracketing the data?
+
+<~:2+3L+EqaECEXg"BOQ!*G@>P86=FqH+?250+EqL5@qZupDf'',+DG^9A8,XfATD@"F<Ga8EbSs"FE9
+&W<+ohc6"FnCAM6>j@qfX:2'@'NEbSs"F<G^IF^]*&Gp%0M@<-I2+EqOABHTEd+CT.u+D#G$F!,[@FD)
+eG4t[sWBOr;a7RJ:Q3ANE6G%#E*@;^00F`V,8+CQC%Ec5AsATAo%CiF&r@V'X(.!]`R+DkP4+EM+*+Cf
+(nEa`I"ATDi7Ch[Zr+FYja?n<FI/0JkO+FP[k+A$/fH#IhG+Co%nDe*F"+Cf>,E,8rsDK?q/@W-C2+DG
+_:@;KXg+EMgF@W-((/0K"XBlmiu+EV:.+@9LXAN2OiG%#E*@;^0>+@^0UB0%/ICggt'@5K\q@:_,Q2D[
+<IA2uM-1h/C&AN)S+@P_LS2.U<.I/~>
+```
+<img width="1342" height="585" alt="Screenshot 2025-10-02 at 3 30 15 PM" src="https://github.com/user-attachments/assets/1351dd6e-590e-4f73-96ef-a9566124ddca" />
+
+Flag `flag{a414ae096381d9594c58e785b3c95dfb}`
+
+### Chall #9 (Base92): description
+```
+This noisy alphabet is picky about whitespace... formatting might matter!
+
+@D_<sB5GVmj-;A[GD:PIptd9#KgRoG![3\gx4mcIUAiYA8M=E_=UOU5S$HqE$p<KHnvkV66}Q?tqB]P)
+Dy\4O\cT$^qE;BG\LX&pVXaZ$Tq0,'1:I3jzOY4Rs}8iY(1.GjE2RDb#yuj-*n10I1S\d:W-#pm0',!e
+D:H4sK'c@^jAiC%1K}1^V65i/Upa*U(mEU'(Va'b/nt_*vgYH.^_V_Td5AgNoIWlD9jvOZ3oKhm/WwX+
+-GHriuce$TlHB+#)E]kGisTc:ehwoA<RF;gx-ld->om0iC&$I3SXV_'bF.gOk[#-H,1kv93JUpCu&I-r
+4c^^pu+!?9iXkKdk6,1cPeWN.@E?CO
+```
+<img width="1347" height="592" alt="Screenshot 2025-10-02 at 3 33 06 PM" src="https://github.com/user-attachments/assets/99a69624-d982-458b-8e5a-187d5491eac7" />
+
+Flag `flag{0c97042d855d7b353dc87c91ea902129}`
+
+### Chall #10 (Base65536): description
+```
+The data below looks super weird! Don't panic if your editor can't render every symbol. Can you tell what it is?
+
+𖡅驣ꍬ𐙥啴𒁪噢褠陨啴陷啳陂驳欠樵欳唬鵷顩啨陣啮陭啰𒁴𐘠陥ꍲ啹𔑥𓁥啹𐙕顩饯啥鵣𓁡顡驴捲縠啦𒁹啵驳啥鹷饬ꔠ𖡩𓅥𒀠啦饯啤ꍧ𒅹𓅨
+阠饮𓄠ꕹ𒁢𓅬唬𒁹啵𓁡啥𓁰靯靡𖥬ꌠ𒁯鹫鱮阠啴鵴𓅩售驈驲鸠啳𒁹𓁵鬠𐙩ꍡ鬠陬潧鬠陬𠅧樴昷椷餵饣餴欱浦此敦污饦魡昷朵頸ᕽ
+```
+For this one, I used [Base65536](https://www.better-converter.com/Encoders-Decoders/Base65536-Decode)
+<img width="1243" height="632" alt="Screenshot 2025-10-02 at 3 35 57 PM" src="https://github.com/user-attachments/assets/09332913-05cc-408d-b559-2672bbffb7c0" />
+
+Flag `flag{4571745dcd4d16f8d6f0a7fdaf71528c}`
